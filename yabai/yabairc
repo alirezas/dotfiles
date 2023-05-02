@@ -1,0 +1,43 @@
+#Spaces
+yabai -m space 1 --label one
+yabai -m space 2 --label two
+yabai -m space 3 --label three
+yabai -m space 4 --label four
+yabai -m space 5 --label five
+yabai -m space 6 --label six
+
+#Ignored Apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
+yabai -m rule --add app="^WhatsApp$" manage=off
+yabai -m rule --add app="^ExpressVPN$" manage=off
+yabai -m rule --add app="^Folx$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Unarchiver$" manage=off
+yabai -m rule --add app="^CleanMyMac X$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+
+yabai -m config layout bsp
+
+yabai -m config window_placement second_child
+
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+#yabai -m config window_border on
+#yabai -m config window_border_width 1
+#yabai -m config active_window_border_color 0xFF40FF00
+#yabai -m config normal_window_border_color 0x00FFFFFF
+#yabai -m config insert_feedback_color        0xffd75f5f
+
+yabai -m config mouse_follows_focus on
+
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+yabai -m mouse_drop_action swap

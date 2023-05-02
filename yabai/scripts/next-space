@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+osascript - <<EOF
+tell application "System Events"
+	activate
+	key code 124 using control down
+end tell
+EOF

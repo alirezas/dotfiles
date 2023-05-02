@@ -1,0 +1,12 @@
+[user]
+	name = Alireza Sarabchi
+	email = a.sarabchi@gmail.com
+[credentials]
+	helper = osxkeychain
+[pull]
+	rebase = false
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
