@@ -82,6 +82,9 @@ export LDFLAGS="-L /opt/homebrew/lib"
 # Init Plugins
 source $ZPLUG_HOME/init.zsh
 zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/aliases", from:oh-my-zsh
+zplug "zpm-zsh/ls"
+zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
