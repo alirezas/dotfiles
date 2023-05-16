@@ -18,6 +18,8 @@ export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -74,13 +76,25 @@ ZSH_CUSTOM=$DOTFILES/oh-my-zsh/custom
 export LDFLAGS="-L /opt/homebrew/lib"
 export LDFLAGS="-L /opt/homebrew/lib"
 
-plugins=(
-    git
-    themes
-    aliases
-    zsh-syntax-highlighting
-    ohmyzsh-full-autoupdate
-)
+# plugins=()
+
+
+# Init Plugins
+source $ZPLUG_HOME/init.zsh
+zplug "plugins/git",   from:oh-my-zsh
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
 
 source $ZSH/oh-my-zsh.sh
 
