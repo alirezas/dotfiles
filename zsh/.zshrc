@@ -83,11 +83,11 @@ export LDFLAGS="-L /opt/homebrew/lib"
 source $ZPLUG_HOME/init.zsh
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/aliases", from:oh-my-zsh
-zplug "zpm-zsh/ls"
+# zplug "zpm-zsh/ls"
 zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+# zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
+# zplug "marlonrichert/zsh-autocomplete", depth:1
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -99,7 +99,11 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/alireza.omp.json)"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
