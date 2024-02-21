@@ -26,7 +26,8 @@ family = "GeistMono Nerd Font Mono"
 [window]
 dynamic_padding = false
 decorations = "Buttonless"
+opacity = 0.85
 
 [window.padding]
 x = 18
-y = 16
+y = 18
