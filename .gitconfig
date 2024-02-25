@@ -3,6 +3,8 @@
 	email = a.sarabchi@gmail.com
 [credentials]
 	helper = osxkeychain
+[core]
+  ignorecase = false
 [pull]
 	rebase = false
 [filter "lfs"]
