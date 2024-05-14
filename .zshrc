@@ -104,3 +104,5 @@ done
 unset conf
 
 eval "$(starship init zsh)"
+
+PATH=~/.console-ninja/.bin:$PATH
