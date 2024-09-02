@@ -10,6 +10,7 @@ import = [
 
 [font]
 size = 15.0
+offset.y = 8
 
 [font.bold]
 family = "GeistMono Nerd Font Mono"
