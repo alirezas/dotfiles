@@ -9,7 +9,7 @@ import = [
 ]
 
 [font]
-size = 14.0
+size = 15.0
 
 [font.bold]
 family = "GeistMono Nerd Font Mono"
