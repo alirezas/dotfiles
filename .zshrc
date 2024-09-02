@@ -91,6 +91,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/aliases",   from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
