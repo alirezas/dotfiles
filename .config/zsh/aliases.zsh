@@ -23,4 +23,4 @@ alias va="valet php artisan"
 alias vc="valet composer"
 
 # NeoVim
-alias vim="nvim"
+# alias vim="nvim"
