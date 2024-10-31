@@ -18,5 +18,5 @@ padding = {x = 16, y = 16 }
 live_config_reload = true
 
 import = [
-  "~/..config/alacritty/poimandres.toml"
+  "~/.config/alacritty/poimandres.toml"
 ]
