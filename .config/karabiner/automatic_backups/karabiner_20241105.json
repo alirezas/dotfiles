@@ -122,12 +122,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Kitty.app'",
+                                "description": "Open -a 'Alacritty.app'",
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": { "mandatory": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Kitty.app'" }],
+                                "to": [{ "shell_command": "open -a 'Alacritty.app'" }],
                                 "type": "basic"
                             },
                             {
