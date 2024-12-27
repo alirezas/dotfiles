@@ -1,0 +1,11 @@
+window-theme = dark
+background-opacity = 0.85
+background-blur-radius = 40
+theme = rose-pine
+font-family = GeistMono Nerd Font Mono
+font-size = 16
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+cursor-style = block
+window-padding-x = 6
+window-padding-y = 6
