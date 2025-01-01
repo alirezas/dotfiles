@@ -8,6 +8,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.colorscheme.poimandres-nvim" },
+  { import = "astrocommunity/comment/mini-comment" },
+  -- { import = "astrocommunity.colorscheme.poimandres-nvim" },
   -- import/override with your plugins folder
 }

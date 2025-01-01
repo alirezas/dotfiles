@@ -9,3 +9,4 @@ macos-option-as-alt = true
 cursor-style = block
 window-padding-x = 6
 window-padding-y = 6
+window-vsync = true
