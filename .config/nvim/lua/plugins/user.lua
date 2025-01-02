@@ -4,6 +4,11 @@
 ---@type LazySpec
 return {
 
+  mappings = {
+    n = {
+      ["\\"] = false,
+    },
+  },
   -- == Examples of Adding Plugins ==
 
   "andweeb/presence.nvim",
