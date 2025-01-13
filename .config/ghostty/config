@@ -10,9 +10,6 @@ cursor-style = block
 adjust-cell-height = 35%
 
 window-theme = dark
-window-padding-x = 6
-window-padding-y = 6
-window-vsync = true
 window-colorspace = "display-p3"
 window-padding-balance = true
 window-save-state = always
