@@ -10,8 +10,11 @@ cursor-style = block
 adjust-cell-height = 35%
 
 window-theme = dark
-window-colorspace = "display-p3"
+window-padding-x = 26
+window-padding-y = 0
 window-padding-balance = true
+window-vsync = true
+window-colorspace = "display-p3"
 window-save-state = always
 
 macos-option-as-alt = true
