@@ -85,9 +85,90 @@ fs.writeFileSync(
       profiles: [
         {
           name: "Default",
-          complex_modifications: {
-            rules,
+          devices: [
+            {
+              disable_built_in_keyboard_if_exists: true,
+              identifiers: {
+                is_keyboard: true,
+                product_id: 668,
+                vendor_id: 76,
+              },
+            },
+          ],
+          selected: true,
+          virtual_hid_keyboard: {
+            country_code: 0,
+            keyboard_type_v2: "ansi",
           },
+          complex_modifications: {
+            rules: [
+              ...rules,
+              {
+                description:
+                  "Double tapping left_shift toggles the caps_lock function.",
+                manipulators: [
+                  {
+                    conditions: [
+                      {
+                        name: "left_shift_pressed",
+                        type: "variable_if",
+                        value: 1,
+                      },
+                    ],
+                    from: {
+                      key_code: "left_shift",
+                      modifiers: { optional: ["any"] },
+                    },
+                    to: [
+                      {
+                        key_code: "spacebar",
+                        modifiers: ["left_control", "left_option"],
+                      },
+                    ],
+                    type: "basic",
+                  },
+                  {
+                    from: {
+                      key_code: "left_shift",
+                      modifiers: { optional: ["any"] },
+                    },
+                    to: [
+                      {
+                        set_variable: {
+                          name: "left_shift_pressed",
+                          value: 1,
+                        },
+                      },
+                      { key_code: "left_shift" },
+                    ],
+                    to_delayed_action: {
+                      to_if_canceled: [
+                        {
+                          set_variable: {
+                            name: "left_shift_pressed",
+                            value: 0,
+                          },
+                        },
+                      ],
+                      to_if_invoked: [
+                        {
+                          set_variable: {
+                            name: "left_shift_pressed",
+                            value: 0,
+                          },
+                        },
+                      ],
+                    },
+                    type: "basic",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          name: "Empty",
+          virtual_hid_keyboard: { country_code: 0 },
         },
       ],
     },
