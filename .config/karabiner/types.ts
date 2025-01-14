@@ -8,6 +8,7 @@ export interface Manipulator {
   type: "basic";
   from: From;
   to?: To[];
+  to_delayed_action?: To[];
   to_after_key_up?: To[];
   to_if_alone?: To[];
   parameters?: Parameters;
