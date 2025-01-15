@@ -1,54 +1,21 @@
 {
-  "global": {
-    "show_in_menu_bar": false
-  },
+  "global": { "show_in_menu_bar": false },
   "profiles": [
     {
-      "name": "Default",
-      "devices": [
-        {
-          "disable_built_in_keyboard_if_exists": true,
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 668,
-            "vendor_id": 76
-          }
-        }
-      ],
-      "selected": true,
-      "virtual_hid_keyboard": {
-        "country_code": 0,
-        "keyboard_type_v2": "ansi"
-      },
       "complex_modifications": {
         "rules": [
           {
-            "description": "Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [
               {
-                "description": "Caps Lock -> Hyper Key",
+                "description": "Hyper Key (⌃⌥⇧⌘)",
                 "from": {
                   "key_code": "caps_lock",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
-                    "set_variable": {
-                      "name": "hyper",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper",
-                      "value": 0
-                    }
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
                   }
                 ],
                 "to_if_alone": [
@@ -57,6 +24,39 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["command", "shift", "option", "control"]
+                  }
+                },
+                "to": [],
+                "type": "basic"
+              },
+              {
+                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["command", "shift", "option", "control"]
+                  }
+                },
+                "to": [],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
+                  "key_code": "slash",
+                  "modifiers": {
+                    "mandatory": ["command", "shift", "option", "control"]
+                  }
+                },
+                "to": [],
+                "type": "basic"
               }
             ]
           },
@@ -64,24 +64,40 @@
             "description": "Hyper Key sublayer \"o\"",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "hyper_sublayer_s",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "hyper_sublayer_v",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "hyper_sublayer_c",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
                 "description": "Toggle Hyper sublayer o",
-                "type": "basic",
                 "from": {
                   "key_code": "o",
                   "modifiers": {
-                    "optional": [
-                      "any"
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
                     ]
                   }
                 },
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_o",
-                      "value": 0
-                    }
-                  }
-                ],
                 "to": [
                   {
                     "set_variable": {
@@ -90,162 +106,111 @@
                     }
                   }
                 ],
-                "conditions": [
+                "to_after_key_up": [
                   {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper",
-                    "value": 1
+                    "set_variable": {
+                      "name": "hyper_sublayer_o",
+                      "value": 0
+                    }
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "to": [
+                "conditions": [
                   {
-                    "shell_command": "open -a 'Arc.app'"
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
                   }
                 ],
                 "description": "Open -a 'Arc.app'",
-                "type": "basic",
                 "from": {
                   "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "mandatory": ["any"] }
                 },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
+                "to": [{ "shell_command": "open -a 'Arc.app'" }],
+                "type": "basic"
               },
               {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Spotify.app'"
-                  }
-                ],
-                "description": "Open -a 'Spotify.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
                 "conditions": [
                   {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
+                    "type": "variable_if",
                     "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Ghostty.app'"
                   }
                 ],
                 "description": "Open -a 'Ghostty.app'",
-                "type": "basic",
                 "from": {
                   "key_code": "i",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "mandatory": ["any"] }
                 },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
+                "to": [{ "shell_command": "open -a 'Ghostty'" }],
+                "type": "basic"
               },
               {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Telegram.app'"
-                  }
-                ],
-                "description": "Open -a 'Telegram.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "t",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
                 "conditions": [
                   {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
+                    "type": "variable_if",
                     "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
                 "description": "Open -a 'Visual Studio Code.app'",
-                "type": "basic",
                 "from": {
                   "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "mandatory": ["any"] }
                 },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
+                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
+                "type": "basic"
               },
               {
-                "to": [
+                "conditions": [
                   {
-                    "shell_command": "open -a 'Figma.app'"
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
                   }
                 ],
                 "description": "Open -a 'Figma.app'",
-                "type": "basic",
                 "from": {
                   "key_code": "f",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "mandatory": ["any"] }
                 },
+                "to": [{ "shell_command": "open -a 'Figma.app'" }],
+                "type": "basic"
+              },
+              {
                 "conditions": [
                   {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
+                    "type": "variable_if",
                     "value": 1
                   }
-                ]
+                ],
+                "description": "Open -a 'Telegram.app'",
+                "from": {
+                  "key_code": "t",
+                  "modifiers": { "mandatory": ["any"] }
+                },
+                "to": [{ "shell_command": "open -a 'Telegram.app'" }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open -a 'Spotify.app'",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": { "mandatory": ["any"] }
+                },
+                "to": [{ "shell_command": "open -a 'Spotify.app'" }],
+                "type": "basic"
               }
             ]
           },
@@ -253,24 +218,25 @@
             "description": "Hyper Key sublayer \"r\"",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
                 "description": "Toggle Hyper sublayer r",
-                "type": "basic",
                 "from": {
                   "key_code": "r",
                   "modifiers": {
-                    "optional": [
-                      "any"
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
                     ]
                   }
                 },
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_r",
-                      "value": 0
-                    }
-                  }
-                ],
                 "to": [
                   {
                     "set_variable": {
@@ -279,66 +245,140 @@
                     }
                   }
                 ],
-                "conditions": [
+                "to_after_key_up": [
                   {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper",
-                    "value": 1
+                    "set_variable": {
+                      "name": "hyper_sublayer_r",
+                      "value": 0
+                    }
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Raycast Confetti",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": { "mandatory": ["any"] }
+                },
                 "to": [
                   {
                     "shell_command": "open raycast://extensions/raycast/raycast/confetti"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/raycast/confetti",
-                "type": "basic",
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 1
-                  }
-                ]
+                "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Raycast Clipboard History",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": { "mandatory": ["any"] }
+                },
                 "to": [
                   {
                     "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/clipboard-history/clipboard-history",
-                "type": "basic",
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper + i/j/k/l == vim directional Keys",
+            "manipulators": [
+              {
                 "from": {
-                  "key_code": "h",
+                  "key_code": "k",
                   "modifiers": {
-                    "optional": [
-                      "any"
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
                     ]
                   }
                 },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 1
+                "to": [{ "key_code": "up_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
                   }
-                ]
+                },
+                "to": [{ "key_code": "left_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [{ "key_code": "down_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [{ "key_code": "right_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "type": "basic"
               }
             ]
           },
@@ -355,19 +395,12 @@
                 ],
                 "from": {
                   "key_code": "left_shift",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
                     "key_code": "spacebar",
-                    "modifiers": [
-                      "left_control",
-                      "left_option"
-                    ]
+                    "modifiers": ["left_control", "left_option"]
                   }
                 ],
                 "type": "basic"
@@ -375,11 +408,7 @@
               {
                 "from": {
                   "key_code": "left_shift",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [
                   {
@@ -388,9 +417,7 @@
                       "value": 1
                     }
                   },
-                  {
-                    "key_code": "left_shift"
-                  }
+                  { "key_code": "left_shift" }
                 ],
                 "to_delayed_action": {
                   "to_if_canceled": [
@@ -415,13 +442,27 @@
             ]
           }
         ]
+      },
+      "devices": [
+        {
+          "disable_built_in_keyboard_if_exists": true,
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 668,
+            "vendor_id": 76
+          }
+        }
+      ],
+      "name": "Default",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "keyboard_type_v2": "ansi"
       }
     },
     {
       "name": "Empty",
-      "virtual_hid_keyboard": {
-        "country_code": 0
-      }
+      "virtual_hid_keyboard": { "country_code": 0 }
     }
   ]
 }
