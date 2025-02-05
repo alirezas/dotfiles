@@ -165,9 +165,9 @@
                     "value": 1
                   }
                 ],
-                "description": "Rectangle: left-half",
+                "description": "Rectangle: almost-maximize",
                 "from": {
-                  "key_code": "m",
+                  "key_code": "spacebar",
                   "modifiers": { "mandatory": ["any"] }
                 },
                 "to": [
@@ -185,9 +185,69 @@
                     "value": 1
                   }
                 ],
-                "description": "Rectangle: left-half",
+                "description": "Rectangle: larger",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "equal_sign",
+                  "modifiers": { "mandatory": ["any"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g rectangle://execute-action?name=larger"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Rectangle: smaller",
+                "from": {
+                  "key_code": "hyphen",
+                  "modifiers": { "mandatory": ["any"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g rectangle://execute-action?name=smaller"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Rectangle: maximize",
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": { "mandatory": ["any"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g rectangle://execute-action?name=maximize"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Rectangle: top-half",
+                "from": {
+                  "key_code": "k",
                   "modifiers": { "mandatory": ["any"] }
                 },
                 "to": [
@@ -205,9 +265,9 @@
                     "value": 1
                   }
                 ],
-                "description": "Rectangle: left-half",
+                "description": "Rectangle: bottom-half",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "j",
                   "modifiers": { "mandatory": ["any"] }
                 },
                 "to": [
