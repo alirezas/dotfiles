@@ -83,7 +83,7 @@ unset conf
 
 eval "$(starship init zsh)"
 
-PATH=~/.console-ninja/.bin:$PATH
+
 
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -103,3 +103,5 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+PATH=~/.console-ninja/.bin:$PATH
