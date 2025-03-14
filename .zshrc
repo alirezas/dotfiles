@@ -104,4 +104,3 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-PATH=~/.console-ninja/.bin:$PATH
