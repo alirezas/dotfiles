@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# brew install switchaudio-osx
 # Get list of connected Bluetooth devices and check if DotPods Pro is the current output
 AIRPODS_STATUS=$(system_profiler SPBluetoothDataType 2>/dev/null | grep -A 4 "DotPods Pro" | grep "Address:" | sed 's/.*Address: //')
 AUDIO_OUTPUT=$(SwitchAudioSource -c)
