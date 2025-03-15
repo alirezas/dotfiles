@@ -105,7 +105,8 @@ fi
 zplug load
 
 
-PATH=~/.console-ninja/.bin:$PATH# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+PATH=~/.console-ninja/.bin:$PATH
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/dot/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
