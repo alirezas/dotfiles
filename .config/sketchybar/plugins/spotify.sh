@@ -13,16 +13,29 @@ if [[ "$SPOTIFY_PLAYER_STATE" == "playing" ]]; then
   ARTIST=$(osascript -e 'tell application "Spotify" to artist of current track as string')
   TRACK=$(osascript -e 'tell application "Spotify" to name of current track as string')
 
-  # Truncate long track names and artist names
-  if [[ ${#TRACK} -gt 30 ]]; then
-    TRACK="${TRACK:0:30}..."
+  # Create full text
+  FULL_TEXT="$TRACK - $ARTIST"
+  MAX_LENGTH=40
+
+  # Only scroll if text is longer than MAX_LENGTH
+  if [[ ${#FULL_TEXT} -gt $MAX_LENGTH ]]; then
+    # Get current timestamp
+    TIMESTAMP=$(date +%s)
+
+    # Calculate scroll position - moves one character every second
+    SCROLL_POS=$((TIMESTAMP % (${#FULL_TEXT} - MAX_LENGTH + 5)))
+
+    # Extract the visible portion
+    VISIBLE_TEXT="${FULL_TEXT:$SCROLL_POS:$MAX_LENGTH}"
+
+    # Debug output to system log
+    logger "Spotify scrolling: pos=$SCROLL_POS, text=$VISIBLE_TEXT"
+  else
+    VISIBLE_TEXT="$FULL_TEXT"
   fi
 
-  if [[ ${#ARTIST} -gt 20 ]]; then
-    ARTIST="${ARTIST:0:20}..."
-  fi
-
-  sketchybar --set $NAME drawing=on label="$TRACK - $ARTIST" icon.drawing=off
+  # Update the item with the current song info
+  sketchybar --set $NAME drawing=on label="$VISIBLE_TEXT" icon.drawing=off
 else
   # Hide the item when Spotify is paused
   sketchybar --set $NAME drawing=off
