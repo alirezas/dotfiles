@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if Spotify is running
-if ! pgrep -x "Spotify" > /dev/null; then
+if ! pgrep -x "Spotify" >/dev/null; then
   sketchybar --set $NAME drawing=off
   exit 0
 fi

@@ -1,23 +1,7 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
-
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+ITEM_DIR="$CONFIG_DIR/items"
 
 sketchybar --bar position=top height=44 blur_radius=30 color=0x00000000 display=main
-
-##### Changing Defaults #####
-# We now change some default values, which are applied to all further items.
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
   icon.font="GeistMono Nerd Font Mono:Bold:17.0"
@@ -27,86 +11,11 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/airpods.sh"
+source "$ITEM_DIR/clock.sh"
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-                         background.color=0x40000000 \
-                         background.corner_radius=25 \
-                         background.height=25 \
-                         background.padding_left=10 \
-                         background.padding_right=10 \
-                         padding_left=10 \
-                         padding_right=10 \
-                         icon.padding_left=0 \
-                         icon.padding_right=0 \
-                         label.padding_left=8 \
-                         label.padding_right=8 \
-           --subscribe front_app front_app_switched
-
-##### Adding Center Items #####
-# Adding Spotify item in the center
-sketchybar --add item spotify center \
-           --set spotify update_freq=1 \
-                         script="$PLUGIN_DIR/spotify.sh" \
-                         icon.drawing=off \
-                         background.color=0x40000000 \
-                         background.corner_radius=25 \
-                         background.height=25 \
-                         padding_left=10 \
-                         padding_right=10 \
-                         label.padding_left=8 \
-                         label.padding_right=8 \
-                         background.padding_left=10 \
-                         background.padding_right=10 \
-                         scroll_texts=on \
-                         label.max_chars=40 \
-                         label.scroll_duration=280 \
-           --subscribe spotify mouse.clicked spotify_change
-
-##### Adding Right Items #####
-# In the same way as the left items we can add items to the right side.
-# Additional position (e.g. center) are available, see:
-# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
-
-# Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
-# volume.sh script is only executed once an actual change in system audio
-# volume is registered. More info about the event system can be found here:
-# https://felixkratz.github.io/SketchyBar/config/events
-
-sketchybar --add item clock right \
-           --set clock update_freq=10 \
-                         script="$PLUGIN_DIR/clock.sh" \
-                         icon.drawing=off \
-                         background.color=0x40000000 \
-                         background.corner_radius=25 \
-                         background.height=25 \
-                         background.padding_left=10 \
-                         background.padding_right=10 \
-                         padding_left=2 \
-                         padding_right=2 \
-                         icon.padding_left=0 \
-                         icon.padding_right=0 \
-                         label.padding_left=8 \
-                         label.padding_right=8
-
-sketchybar --add item airpods right \
-           --set airpods update_freq=5 \
-                         script="$PLUGIN_DIR/airpods.sh" \
-                         background.color=0x40000000 \
-                         background.corner_radius=25 \
-                         background.height=25 \
-                         background.padding_left=10 \
-                         background.padding_right=10 \
-                         padding_left=2 \
-                         padding_right=2 \
-                         icon.padding_left=8 \
-                         icon.padding_right=8 \
-                         label.drawing=off
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
