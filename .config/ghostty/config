@@ -1,6 +1,6 @@
 font-family = GeistMono Nerd Font Mono
 font-size = 16
-term=xterm
+term=linux
 
 theme = Aura
 macos-titlebar-style = hidden
