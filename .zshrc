@@ -70,10 +70,6 @@ export LDFLAGS="-L /opt/homebrew/lib"
 
 source $ZSH/oh-my-zsh.sh
 
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 # Load seperated config files
 for conf in "$HOME/.config/zsh/"*.zsh; do
@@ -105,9 +101,17 @@ fi
 zplug load
 
 
-PATH=~/.console-ninja/.bin:$PATH
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/dot/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# pnpm
+export PNPM_HOME="/Users/dot/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
