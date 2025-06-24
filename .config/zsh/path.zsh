@@ -4,6 +4,8 @@ export PATH="$DOTFILES/bin:$PATH"
 export PATH="/opt/homebrew/opt/node/bin:$PATH"
 
 export PATH="/Users/Shared/DBngin/postgresql/15.1/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Fig path
 # export PATH="$HOME/.fig/bin:$PATH"
