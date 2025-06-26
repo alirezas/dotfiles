@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sketchybar --add item hijri_date right \
-  --set hijri_date update_freq=3600 \
+  --set hijri_date update_freq=360 \
   script="$PLUGIN_DIR/hijri_date.sh" \
   icon.drawing=off \
   background.color=0x40000000 \
