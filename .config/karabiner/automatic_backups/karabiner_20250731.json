@@ -487,38 +487,6 @@
                                 },
                                 "to": [{ "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history" }],
                                 "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_sublayer_r",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Clipboard History",
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": { "mandatory": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/apple-notes/index" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper_sublayer_r",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Clipboard History",
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "mandatory": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/system/empty-trash" }],
-                                "type": "basic"
                             }
                         ]
                     },
