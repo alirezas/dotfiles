@@ -1,3 +1,6 @@
+# ls
+alias ls="ls --color"
+
 # Shortcuts
 alias brewsync="sh $DOTFILES/Homebrew/sync.sh"
 alias vscodeextensionslist="code --list-extensions > $DOTFILES/vscode-extensions.md"
