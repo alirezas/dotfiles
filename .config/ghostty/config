@@ -2,14 +2,13 @@ font-family = GeistMono Nerd Font Mono
 font-size = 16
 
 theme = Aura
-macos-titlebar-style = hidden
 background-opacity = 0.85
 background-blur-radius = 40
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
 
-window-theme = dark
+window-theme = ghostty
 window-padding-x = 26
 window-padding-y = 0
 window-padding-balance = true
@@ -17,6 +16,7 @@ window-vsync = true
 window-colorspace = "display-p3"
 window-save-state = always
 
+macos-titlebar-style = tabs
 macos-option-as-alt = true
 
 copy-on-select = clipboard
