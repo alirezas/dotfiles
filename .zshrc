@@ -91,3 +91,8 @@ esac
 # fzf
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
+
+# oh-my-posh
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
