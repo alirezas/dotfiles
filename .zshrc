@@ -81,7 +81,6 @@ compinit
 # End of Docker CLI completions
 
 # pnpm
-export PNPM_HOME="/Users/dot/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
