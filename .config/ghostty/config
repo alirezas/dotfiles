@@ -1,9 +1,7 @@
-font-family = GeistMono Nerd Font Mono
+font-family = Hack Nerd Font Mono
 font-size = 16
 
-theme = Aura
-background-opacity = 0.85
-background-blur-radius = 40
+theme = Github-Dark-Colorblind
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 
