@@ -1,7 +1,7 @@
 font-family = Hack Nerd Font Mono
 font-size = 16
 
-theme = Github-Dark-Colorblind
+theme = Github Dark Colorblind
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 
