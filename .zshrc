@@ -95,3 +95,6 @@ eval "$(zoxide init zsh --cmd cd)"
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/dot.omp.toml)"
 fi
+
+# Created by `pipx` on 2025-09-17 12:38:03
+export PATH="$PATH:/Users/alireza/.local/bin"

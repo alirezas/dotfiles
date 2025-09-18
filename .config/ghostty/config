@@ -8,7 +8,7 @@ cursor-style = block
 
 window-theme = ghostty
 window-padding-x = 26
-window-padding-y = 0
+window-padding-y = 20
 window-padding-balance = true
 window-vsync = true
 window-colorspace = "display-p3"
