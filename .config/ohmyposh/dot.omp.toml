@@ -1,10 +1,12 @@
-console_title_template = '{{if .Root}}(Admin){{end}} {{.PWD}}'
 version = 3
+final_space = true
 
-[transient_prompt]
-  template = '❯ '
-  foreground = '#B48EAD'
-  foreground_templates = ['{{ if gt .Code 0 }}#BF616A{{ end }}']
+[palette]
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
 
 [upgrade]
   source = 'cdn'
@@ -15,59 +17,36 @@ version = 3
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
 
   [[blocks.segments]]
     template = '{{ .Path }} '
-    foreground = '#81A1C1'
+    foreground = 'p:pink'
     type = 'path'
     style = 'plain'
 
     [blocks.segments.properties]
-      style = 'full'
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
+      style = 'folder'
 
   [[blocks.segments]]
-    template = '{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7>*</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
-    foreground = '#6C6C6C'
+    template = '{{ .HEAD }} '
+    foreground = 'p:lavender'
     type = 'git'
     style = 'plain'
 
     [blocks.segments.properties]
-      branch_ahead_icon = '<#88C0D0>⇡ </>'
-      branch_behind_icon = '<#88C0D0>⇣ </>'
-      branch_icon = ''
-      fetch_status = true
-      fetch_upstream_icon = true
-      github_icon = ''
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-
-  [[blocks.segments]]
-    template = ' {{ .FormattedMs }} '
-    foreground = '#A3BE8C'
-    type = 'executiontime'
-    style = 'plain'
-
-    [blocks.segments.properties]
-      style = 'austin'
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
+      branch_icon = ' '
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_status = false
+      fetch_upstream_icon = false
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
 
   [[blocks.segments]]
-    template = '❯ '
-    foreground = '#B48EAD'
-    type = 'status'
+    template = ''
+    foreground = 'p:closer'
+    type = 'text'
     style = 'plain'
-    foreground_templates = ['{{ if gt .Code 0 }}#BF616A{{ end }}']
-
-    [blocks.segments.properties]
-      always_enabled = true
