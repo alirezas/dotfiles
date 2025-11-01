@@ -1,6 +1,12 @@
 # ls
 alias ls="ls --color"
 
+# Dots
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 # Shortcuts
 alias brewsync="sh $DOTFILES/Homebrew/sync.sh"
 alias vscodeextensionslist="code --list-extensions > $DOTFILES/vscode-extensions.md"
