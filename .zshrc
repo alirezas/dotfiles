@@ -25,6 +25,8 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::eza
 zinit snippet OMZP::aliases
 zinit snippet OMZP::alias-finder
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
 
 # Load completions
 autoload -Uz compinit && compinit
