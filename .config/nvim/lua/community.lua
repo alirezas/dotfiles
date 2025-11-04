@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity/comment/mini-comment" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.colorscheme.poimandres-nvim" },
   -- import/override with your plugins folder
 }
