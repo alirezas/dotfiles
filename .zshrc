@@ -24,6 +24,7 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::eza
 zinit snippet OMZP::aliases
+zinit snippet OMZP::alias-finder
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -59,6 +60,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':omz:plugins:eza' 'hyperlink' yes
 zstyle ':omz:plugins:eza' 'dirs-first' yes
+zstyle ':omz:plugins:alias-finder' autoload yes
+zstyle ':omz:plugins:alias-finder' longer yes
+zstyle ':omz:plugins:alias-finder' exact yes
+zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # Path
 # If you come from bash you might have to change your $PATH.
