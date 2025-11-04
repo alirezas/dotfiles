@@ -27,6 +27,7 @@ zinit snippet OMZP::aliases
 zinit snippet OMZP::alias-finder
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
+zinit light ntnyq/omz-plugin-pnpm
 
 # Load completions
 autoload -Uz compinit && compinit
