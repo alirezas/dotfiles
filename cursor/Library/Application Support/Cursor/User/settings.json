@@ -1,6 +1,7 @@
 {
     "projectManager.git.baseFolders": [
-        "~/dev"
+        "~/dev",
+        "~/dotfiles"
     ],
     "workbench.sideBar.location": "right",
     "git.confirmSync": false,
