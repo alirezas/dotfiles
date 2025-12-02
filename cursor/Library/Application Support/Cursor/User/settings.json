@@ -1,0 +1,21 @@
+{
+    "projectManager.git.baseFolders": [
+        "~/dev"
+    ],
+    "workbench.sideBar.location": "right",
+    "git.confirmSync": false,
+    "symbols.hidesExplorerArrows": false,
+    "workbench.iconTheme": "symbols",
+    "workbench.navigationControl.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "editor.fontFamily": "\"Hack Nerd Font Mono\", \"vazirmatn\"",
+    "editor.fontSize": 14,
+    "workbench.fontAliasing": "antialiased",
+    "editor.fontLigatures": true,
+    "editor.fontVariations": true,
+    "editor.lineHeight": 1.7,
+    "editor.lineNumbers": "relative",
+    "files.watcherExclude": {
+        "**/node_modules/**": true
+    }
+}
