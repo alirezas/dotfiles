@@ -44,5 +44,14 @@ openMode:bind({}, "c", function()
     openMode:exit()
 end)
 
+-----------------------------------------------------
+-- Inside Open Mode: Hyper + T → Open Telegram
+-----------------------------------------------------
+
+openMode:bind({}, "t", function()
+    hs.application.launchOrFocus("Telegram")
+    openMode:exit()
+end)
+
 return openMode
 
