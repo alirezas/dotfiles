@@ -53,5 +53,14 @@ openMode:bind({}, "t", function()
     openMode:exit()
 end)
 
+-----------------------------------------------------
+-- Inside Open Mode: Hyper + S → Open Spotify
+-----------------------------------------------------
+
+openMode:bind({}, "s", function()
+    hs.application.launchOrFocus("Spotify")
+    openMode:exit()
+end)
+
 return openMode
 
