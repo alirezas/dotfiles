@@ -18,5 +18,6 @@
     "editor.lineNumbers": "relative",
     "files.watcherExclude": {
         "**/node_modules/**": true
-    }
+    },
+    "workbench.colorTheme": "poimandres"
 }
