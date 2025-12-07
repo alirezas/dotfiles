@@ -72,5 +72,33 @@
         "key": "cmd+-",
         "command": "workbench.files.action.collapseExplorerFolders",
         "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+k cmd+enter",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+m cmd+o",
+        "command": "editor.emmet.action.balanceOut"
+    },
+    {
+        "key": "cmd+m cmd+i",
+        "command": "editor.emmet.action.balanceIn"
+    },
+    {
+        "key": "cmd+n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus"
+    },
+    {
+        "key": "shift+cmd+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
     }
 ]
