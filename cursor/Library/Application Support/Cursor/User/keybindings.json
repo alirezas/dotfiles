@@ -100,5 +100,19 @@
         "key": "shift+cmd+n",
         "command": "explorer.newFolder",
         "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+m cmd+w",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
+    },
+    {
+        "key": "cmd+k cmd+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
 ]

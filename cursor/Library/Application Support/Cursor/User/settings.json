@@ -14,10 +14,12 @@
     "workbench.fontAliasing": "antialiased",
     "editor.fontLigatures": true,
     "editor.fontVariations": true,
-    "editor.lineHeight": 1.7,
+    "editor.lineHeight": 1.9,
     "editor.lineNumbers": "relative",
     "files.watcherExclude": {
         "**/node_modules/**": true
     },
-    "workbench.colorTheme": "poimandres"
+    "workbench.colorTheme": "poimandres",
+    "files.autoSave": "onFocusChange",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
