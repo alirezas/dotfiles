@@ -21,5 +21,8 @@
     },
     "workbench.colorTheme": "poimandres",
     "files.autoSave": "onFocusChange",
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.external.osxExec": "Ghostty.app",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.7
 }
