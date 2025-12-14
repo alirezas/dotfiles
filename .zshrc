@@ -117,3 +117,6 @@ export PATH=$PATH:/Users/alireza/.spicetify
 
 # Added by Antigravity
 export PATH="/Users/dot/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/dot/.antigravity/antigravity/bin:$PATH"
