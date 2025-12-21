@@ -19,5 +19,6 @@
     "files.watcherExclude": {
         "**/node_modules/**": true
     },
-    "workbench.colorTheme": "poimandres"
+    "workbench.colorTheme": "poimandres",
+    "extensions.ignoreRecommendations": true
 }
