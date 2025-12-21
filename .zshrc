@@ -75,6 +75,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your dotfiles.
 export DOTFILES=$HOME/dotfiles
 
+export NODE_OPTIONS="--use-system-ca"
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 export LDFLAGS="-L /opt/homebrew/lib"
 export LDFLAGS="-L /opt/homebrew/lib"
@@ -112,6 +114,9 @@ fi
 export PATH="$PATH:/Users/alireza/.local/bin"
 
 export PATH=$PATH:/Users/alireza/.spicetify
+
+# Added by Antigravity
+export PATH="/Users/dot/.antigravity/antigravity/bin:$PATH"
 
 # Added by Antigravity
 export PATH="/Users/dot/.antigravity/antigravity/bin:$PATH"

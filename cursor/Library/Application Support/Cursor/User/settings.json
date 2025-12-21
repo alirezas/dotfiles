@@ -14,11 +14,16 @@
     "workbench.fontAliasing": "antialiased",
     "editor.fontLigatures": true,
     "editor.fontVariations": true,
-    "editor.lineHeight": 1.7,
+    "editor.lineHeight": 1.9,
     "editor.lineNumbers": "relative",
     "files.watcherExclude": {
         "**/node_modules/**": true
     },
     "workbench.colorTheme": "poimandres",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "onFocusChange",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.external.osxExec": "Ghostty.app",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.7
 }
