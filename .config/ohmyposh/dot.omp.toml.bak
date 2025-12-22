@@ -1,4 +1,4 @@
-version = 4
+version = 3
 final_space = true
 
 [palette]
@@ -24,7 +24,7 @@ final_space = true
     type = 'path'
     style = 'plain'
 
-    [blocks.segments.options]
+    [blocks.segments.properties]
       style = 'folder'
 
   [[blocks.segments]]
@@ -33,7 +33,7 @@ final_space = true
     type = 'git'
     style = 'plain'
 
-    [blocks.segments.options]
+    [blocks.segments.properties]
       branch_icon = ' '
       cherry_pick_icon = ' '
       commit_icon = ' '

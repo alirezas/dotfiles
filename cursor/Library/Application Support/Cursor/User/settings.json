@@ -20,6 +20,7 @@
         "**/node_modules/**": true
     },
     "workbench.colorTheme": "poimandres",
+    "extensions.ignoreRecommendations": true,
     "files.autoSave": "onFocusChange",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "terminal.external.osxExec": "Ghostty.app",
