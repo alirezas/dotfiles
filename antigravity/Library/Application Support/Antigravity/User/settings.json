@@ -27,5 +27,6 @@
   "terminal.integrated.lineHeight": 1.7,
   "json.schemaDownload.enable": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "extensions.ignoreRecommendations": true
 }

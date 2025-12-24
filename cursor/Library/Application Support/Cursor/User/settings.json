@@ -27,5 +27,6 @@
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.7,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "extensions.ignoreRecommendations": true
+    "cursor.composer.usageSummaryDisplay": "always",
+    "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"]
 }
