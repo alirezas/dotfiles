@@ -25,5 +25,6 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "terminal.external.osxExec": "Ghostty.app",
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.lineHeight": 1.7
+    "terminal.integrated.lineHeight": 1.7,
+    "explorer.confirmDragAndDrop": false
 }
