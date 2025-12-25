@@ -1,0 +1,21 @@
+# Runtime/cache files to ignore
+\.sock$
+\.log$
+
+# Directories to ignore
+Cache
+CachedData
+CachedProfilesData
+Code Cache
+DawnGraphiteCache
+DawnWebGPUCache
+GPUCache
+Local Storage
+Shared Dictionary
+blob_storage
+logs
+Backups
+History
+globalStorage
+workspaceStorage
+leveldb
