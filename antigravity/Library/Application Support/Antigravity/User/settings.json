@@ -25,6 +25,8 @@
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.7,
+  "json.schemaDownload.enable": false,
+  "editor.minimap.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "json.schemaDownload.enable": false
+  "extensions.ignoreRecommendations": true
 }
