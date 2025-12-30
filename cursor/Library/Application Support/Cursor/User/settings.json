@@ -26,6 +26,7 @@
     "terminal.external.osxExec": "Ghostty.app",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.7,
+    "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "cursor.composer.usageSummaryDisplay": "always",
     "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"]
