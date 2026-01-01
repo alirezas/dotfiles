@@ -20,4 +20,3 @@ macos-titlebar-style = tabs
 macos-option-as-alt = true
 
 copy-on-select = clipboard
-keybind = shift+enter=text:\x1b\r
