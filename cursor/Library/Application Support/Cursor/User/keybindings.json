@@ -116,7 +116,7 @@
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "cmd+k cmd+t",
+        "key": "cmd+t",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
     },
@@ -124,5 +124,13 @@
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
+    },
+    {
+        "key": "cmd+k cmd+t",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]

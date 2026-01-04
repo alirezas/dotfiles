@@ -29,5 +29,10 @@
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "cursor.composer.usageSummaryDisplay": "always",
-    "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"]
+    "tailwindCSS.classFunctions": [
+        "tw",
+        "clsx",
+        "tw\\.[a-z-]+"
+    ],
+    "claudeCode.preferredLocation": "panel"
 }
