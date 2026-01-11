@@ -3,7 +3,6 @@
         "~/dev",
         "~/dotfiles"
     ],
-    "workbench.sideBar.location": "right",
     "git.confirmSync": false,
     "symbols.hidesExplorerArrows": false,
     "workbench.iconTheme": "symbols",
@@ -29,5 +28,12 @@
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "cursor.composer.usageSummaryDisplay": "always",
-    "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"]
+    "tailwindCSS.classFunctions": [
+        "tw",
+        "clsx",
+        "tw\\.[a-z-]+"
+    ],
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.selectedModel": "claude-opus-4-5-20251101",
+    "workbench.sideBar.location": "right"
 }
